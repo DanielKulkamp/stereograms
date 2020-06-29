@@ -1,0 +1,2 @@
+# stereograms
+Stereograms generator
