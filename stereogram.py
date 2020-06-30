@@ -18,6 +18,7 @@ def main(argv):
     
     final = cv.imread(argv[0])
 
+    force = None #anti pattern?
     for arg in argv[3:]:
         if arg[:3] == '-f=':
             try:
@@ -34,7 +35,7 @@ def main(argv):
                 if force is None:
                     final[i][j] = fore[i][j+depthmap[i][j]]
                 else:
-                    final[i][j]~= fore[i][j+force]
+                    final[i][j] = fore[i][j+force]
 
             
     cv.imshow("Foreground", fore)
@@ -42,8 +43,8 @@ def main(argv):
 
     k = cv.waitKey(0)
     if k == ord("s"):
-        cv.imwrite("./final2.png", final)
-        print(f"saving")
+        cv.imwrite(arv[2], final)
+        print(f"saving {argv[2]}")
 
 if __name__ == '__main__':
     print(sys.argv)
